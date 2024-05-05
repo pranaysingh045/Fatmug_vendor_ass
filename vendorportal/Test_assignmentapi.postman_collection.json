@@ -1,0 +1,337 @@
+{
+	"info": {
+		"_postman_id": "e82bc939-23a2-4108-afb4-f8f541e5526c",
+		"name": "Test_assignmentapi",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "14651426"
+	},
+	"item": [
+		{
+			"name": "New Request",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"url": {
+					"raw": "{{baseUrl}}/api/vendors/",
+					"host": [
+						"{{baseUrl}}"
+					],
+					"path": [
+						"api",
+						"vendors",
+						""
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "getVendor_details",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{baseUrl}}/api/vendors/",
+					"host": [
+						"{{baseUrl}}"
+					],
+					"path": [
+						"api",
+						"vendors",
+						""
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "update_acknolodgement",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "token 8d9b71e863c4218e9886905c81fc76776c1138e1",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"acknowledgment_date\":\"2024-05-25T08:02:20.238802Z\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{baseUrl}}/api/purchase_orders/5/acknowledge",
+					"host": [
+						"{{baseUrl}}"
+					],
+					"path": [
+						"api",
+						"purchase_orders",
+						"5",
+						"acknowledge"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "GenerateToken",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"vendorId\":1,\r\n    \"password\":\"pranay@123\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{baseUrl}}/api/generatetoken",
+					"host": [
+						"{{baseUrl}}"
+					],
+					"path": [
+						"api",
+						"generatetoken"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Purchaseorder",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "token 8d9b71e863c4218e9886905c81fc76776c1138e1",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"delivery_date\":\"2024-15-04 12:52:09.931380\",\r\n    \"items\":{\r\n        \"name\":\"mango\",\r\n        \"weight\":\"1kg\"\r\n    },\r\n    \"quantity\":2,\r\n    \"status\":\"pending\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{baseUrl}}/api/purchase_orders/",
+					"host": [
+						"{{baseUrl}}"
+					],
+					"path": [
+						"api",
+						"purchase_orders",
+						""
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "GetOrderList",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "token 8d9b71e863c4218e9886905c81fc76776c1138e1",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "{{baseUrl}}/api/purchase_orders/",
+					"host": [
+						"{{baseUrl}}"
+					],
+					"path": [
+						"api",
+						"purchase_orders",
+						""
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "GetOrder_ByID(single order)",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "token 8d9b71e863c4218e9886905c81fc76776c1138e1",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "{{baseUrl}}/api/purchase_orders/5/",
+					"host": [
+						"{{baseUrl}}"
+					],
+					"path": [
+						"api",
+						"purchase_orders",
+						"5",
+						""
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Update_order",
+			"request": {
+				"method": "PUT",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "token 8d9b71e863c4218e9886905c81fc76776c1138e1",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"items\": {\r\n        \"name\": \"orange\",\r\n        \"weight\": \"3kg\",\r\n        \"size\":\"A4\"\r\n    },\r\n    \"quantity\": 1,\r\n    \"status\": \"pending\",\r\n    \"quality_rating\": 1.5,\r\n    \"issue_date\": \"2024-05-04\",\r\n    \"acknowledgment_date\": \"2024-05-04T08:02:20.238802Z\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{baseUrl}}/api/purchase_orders/3/",
+					"host": [
+						"{{baseUrl}}"
+					],
+					"path": [
+						"api",
+						"purchase_orders",
+						"3",
+						""
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Delete_Order",
+			"request": {
+				"method": "DELETE",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "token 8d9b71e863c4218e9886905c81fc76776c1138e1",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "{{baseUrl}}/api/purchase_orders/4/",
+					"host": [
+						"{{baseUrl}}"
+					],
+					"path": [
+						"api",
+						"purchase_orders",
+						"4",
+						""
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "PerFormanceUpdate",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "token 8d9b71e863c4218e9886905c81fc76776c1138e1",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "{{baseUrl}}/api/vendors/1/performance",
+					"host": [
+						"{{baseUrl}}"
+					],
+					"path": [
+						"api",
+						"vendors",
+						"1",
+						"performance"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "get Vendor_performance_history",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "token 8d9b71e863c4218e9886905c81fc76776c1138e1",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "{{baseUrl}}/api/vendors/1/performance",
+					"host": [
+						"{{baseUrl}}"
+					],
+					"path": [
+						"api",
+						"vendors",
+						"1",
+						"performance"
+					]
+				}
+			},
+			"response": []
+		}
+	],
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"type": "text/javascript",
+				"packages": {},
+				"exec": [
+					""
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"type": "text/javascript",
+				"packages": {},
+				"exec": [
+					""
+				]
+			}
+		}
+	],
+	"variable": [
+		{
+			"key": "baseUrl",
+			"value": "http://127.0.0.1:8000",
+			"type": "string"
+		}
+	]
+}
