@@ -1,0 +1,8 @@
+1.Create a virtual enviroment
+2.active virtual enviroment 
+3.clone project from git 'https://github.com/pranaysingh045/Fatmug_vendor_ass/tree/master/vendorportal'
+4.go to project folder 
+5.in project folder i have added required.txt file 
+6.run command 'pip install required.txt'
+7.after install now you can run  project using comman 'python manage.py runserver'
+8.after running project you can test using browserable api or using postman(i have added api collection in project directory you can open in postman)
